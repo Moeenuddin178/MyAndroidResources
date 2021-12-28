@@ -1,27 +1,28 @@
-//Two methods 
-//1.
-  private int getcount(String key, int defvalue) {
+**//Two methods 
+//1.**
+
+`  private int getcount(String key, int defvalue) {
         SharedPreferences sharedPreferences = getSharedPreferences("MySharedPrefcount", MODE_PRIVATE);
-        return sharedPreferences.getInt(key, defvalue);   }
+        return sharedPreferences.getInt(key, defvalue);   }`
     
-// 2   
-    private void saveDatacount(String key, int data) {
+`    private void saveDatacount(String key, int data) {
         SharedPreferences sharedPreferences = getSharedPreferences("MySharedPrefcount", MODE_PRIVATE);
         SharedPreferences.Editor myEdit = sharedPreferences.edit();
         myEdit.putInt(key, data);
-        myEdit.commit(); }
+        myEdit.commit(); }`
+
         
         
-        //inside oncreate or any splash screen start 
-        //
+        **//inside oncreate or any splash screen start set it on click**
+
         
         
-         //Todo set it on click
-        int currentAppStart = getcount("appstarts", 0);
+       
+    `    int currentAppStart = getcount("appstarts", 0);
         currentAppStart++;
         saveDatacount("appstarts", currentAppStart);
 
         if (currentAppStart>=15) {
            // initialreview();
              Toast.makeText(MainActivity.this, ""+currentAppStart, Toast.LENGTH_SHORT).show();
-        }
+        }`
